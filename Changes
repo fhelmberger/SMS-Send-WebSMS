@@ -1,0 +1,4 @@
+Revision history for SMS-Send-WebSMS: {{ $dist->version }}
+
+{{ $NEXT }}
+    - Initial release using the HTTPS JSON API
