@@ -34,7 +34,7 @@ use base 'SMS::Send::Driver';
 
 =head1 DESCRIPTION
 
-This module currently uses the L<REST API|https://websms.at/entwickler/apis/rest-sms-api> with JSON.
+This module currently uses the L<REST API|https://developer.websms.com/web-api> with JSON.
 
 =head1 METHODS
 
@@ -44,7 +44,7 @@ Is called by L<SMS::Send/send_sms> and passes all arguments starting with an
 underscore to the request having the first underscore removed as shown in the
 SYNOPSIS above.
 The list of supported parameters can be found on the
-L<WebSMS REST API website|https://websms.at/entwickler/apis/rest-sms-api#dev-rest-text-sms-senden-json-beispiel>.
+L<WebSMS REST API website|https://developer.websms.com/rest-api/smsmessaging_text_post/>.
 
 Returns true if the message was successfully sent.
 
@@ -117,7 +117,7 @@ sub send_sms {
 
     my $response_message = decode_json( $response->{content} );
 
-    # https://websms.at/entwickler/apis/rest-sms-api#dev-rest-statuscodes
+    # https://developer.websms.com/web-api/#statuscodes
     return 1
         if $response_message->{statusCode} =~ /^20\d\d/;
 
